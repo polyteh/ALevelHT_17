@@ -46,15 +46,15 @@ namespace CollectionTestConsole
                 Console.WriteLine($"Item with id={idToDelete}");
                 PrintCustomCollection(myCarList);
             }
-            
+
             int studentObjectCount = FillCollectionWithStudents(myStudentList);
 
             Console.ReadKey();
         }
         public static int FillCollectionWithCars(CustomCollectionList<Car> curCarList)
         {
-            List <(string, int)> carInitList = new List<(string, int)> ()
-            {               
+            List<(string, int)> carInitList = new List<(string, int)>()
+            {
                 ("Catmobile", 30),
                 ("Patmobile", 5),
                 ("Crazymobile", 1000),
@@ -65,14 +65,14 @@ namespace CollectionTestConsole
             };
             foreach (var newCar in carInitList)
             {
-                curCarList.Add(new Car(newCar.Item1,newCar.Item2));
+                curCarList.Add(new Car(newCar.Item1, newCar.Item2));
             }
             return curCarList.NumberOfItems();
         }
 
         public static int FillCollectionWithStudents(CustomCollectionList<Student> curStudList)
         {
-            List<(string, int, string)> studentInitList = new List<(string, int,string)>()
+            List<(string, int, string)> studentInitList = new List<(string, int, string)>()
             {
                 ("Ivanoff", 22,"ICP"),
                 ("Petroff", 21,"ICP"),
@@ -90,7 +90,7 @@ namespace CollectionTestConsole
         }
         public static void PrintCustomCollection<T>(CustomCollectionList<T> curCollestion)
         {
-            if (curCollestion.NumberOfItems()!=0)
+            if (curCollestion.NumberOfItems() != 0)
             {
                 foreach (var item in curCollestion)
                 {

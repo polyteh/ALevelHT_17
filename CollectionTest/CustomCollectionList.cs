@@ -25,7 +25,7 @@ namespace CollectionTest
         // remove item by ID 
         public bool RemoveByID(string removeItemID)
         {
-            var itemToDelete = customCollectionList.Find((x)=>((IInfo)x).ID==removeItemID);
+            var itemToDelete = customCollectionList.Find((x) => ((IInfo)x).ID == removeItemID);
             if (customCollectionList.Remove(itemToDelete))
             {
                 return true;
@@ -41,7 +41,7 @@ namespace CollectionTest
         public List<T> FindAll(Predicate<T> searchCriteria)
         {
             List<T> findElements = customCollectionList.FindAll(searchCriteria);
-            if (findElements.Count!=0)
+            if (findElements.Count != 0)
             {
                 return findElements;
             }
@@ -70,12 +70,12 @@ namespace CollectionTest
         }
         // search with criteria and sort elements. Return with iterator spcific amount of items
         public IEnumerable<T> FindItems<TKey>(Predicate<T> searchCriteria, Func<T, TKey> keySelector, int itemCount)
-        {         
+        {
             List<T> findElements = customCollectionList.FindAll(searchCriteria).OrderBy(keySelector).ToList();
             int curItemCount = 0;
             for (int i = 0; i < findElements.Count; i++)
             {
-                if ((i == findElements.Count)||(curItemCount==itemCount))
+                if ((i == findElements.Count) || (curItemCount == itemCount))
                 {
                     yield break;
                 }

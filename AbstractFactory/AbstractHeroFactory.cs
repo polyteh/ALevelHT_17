@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace AbstractFactory
 {
+    // abstract factory
     public abstract class AbstractHeroFactory
 
     {
@@ -28,6 +29,7 @@ namespace AbstractFactory
             }
         }
     }
+    // factory to build walked swordsman
     class WalkedSwordsman : AbstractHeroFactory
     {
         public WalkedSwordsman(int heroHealth) : base(heroHealth)
@@ -47,6 +49,7 @@ namespace AbstractFactory
             return new Walk();
         }
     }
+    // factory to build elite ride swordsman
     class EliteRideSwordsman : AbstractHeroFactory
     {
         private int _eliteSwardsmanDamage;
@@ -67,6 +70,7 @@ namespace AbstractFactory
             return new Ride();
         }
     }
+    // factory to build ride fire mage
     class RideFireMage : AbstractHeroFactory
     {
         public override IPhysicalDamage MakePhysicalDamage()
@@ -82,6 +86,7 @@ namespace AbstractFactory
             return new Ride();
         }
     }
+    // client
     public class Hero
     {
         private IPhysicalDamage _makePhysicalDamage;
@@ -92,8 +97,8 @@ namespace AbstractFactory
         private AbstractHeroFactory _newHerofactory;
         // а вот тут вопрос: как лучше получать доступ к функционалу конкретной фабрики
         // 1) сделать приватные поля на каждый метод абстрактной фабрики
-        // 2) сделать инстанс абстрактной фабрики (дефакто туда пишется наследник-конкретная фабрика) фабрики и работать через него
-        
+        // 2) сделать инстанс абстрактной фабрики (дефакто туда пишется наследник-конкретная фабрика) и работать через него?
+
         // пример контравариации??
         public Hero(AbstractHeroFactory newHeroFactory)
         {
@@ -103,29 +108,23 @@ namespace AbstractFactory
             _heroHealth = newHeroFactory.Health;
             this._newHerofactory = newHeroFactory;
         }
-
         public int MakePhysicalDamage()
         {
-
             //int physicalDamage = ((IPhysicalDamage)_newHerofactory.MakePhysicalDamage()).MakeHit();
             //return physicalDamage;
             return _makePhysicalDamage.MakeHit();
         }
         public int MakeMagicDamage()
         {
-
             return _makeMagicDamage.CastSpell();
         }
         public int MakeMovement()
         {
-          
             return _makeMovement.Move();
         }
         public int CurrentHealth()
         {
             return _newHerofactory.Health;
         }
-
     }
-
 }

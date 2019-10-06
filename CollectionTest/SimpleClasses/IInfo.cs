@@ -9,6 +9,6 @@ namespace CollectionTest.SimpleClasses
     public interface IInfo
     {
         // all items in the custom collections will have ID
-         string ID { get; }
+        string ID { get; }
     }
 }

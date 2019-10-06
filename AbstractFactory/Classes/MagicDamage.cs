@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AbstractFactory.Classes
 {
+    // magic damage classes
     public interface IMagicDamage
     {
         int CastSpell();

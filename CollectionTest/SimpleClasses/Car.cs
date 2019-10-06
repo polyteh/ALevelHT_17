@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CollectionTest.SimpleClasses
 {
-    public class Car:IInfo
+    public class Car : IInfo
     {
         // some staff for ID managment
         private static int idCarIncreament = 0;

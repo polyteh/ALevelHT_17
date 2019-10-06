@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AbstractFactory.Classes
 {
+    // movement classes
     public interface IMovement
     {
         int Move();
