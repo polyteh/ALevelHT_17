@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactory", "Abstract
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactoryWithGeneric", "AbstractFactoryWithGeneric\AbstractFactoryWithGeneric.csproj", "{45DF790B-565E-4502-99C1-F046245D6F14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionTestLib", "CollectionTest\CollectionTestLib.csproj", "{453D8B3E-5252-4066-A208-1DAED57BB63E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{45DF790B-565E-4502-99C1-F046245D6F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45DF790B-565E-4502-99C1-F046245D6F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45DF790B-565E-4502-99C1-F046245D6F14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{453D8B3E-5252-4066-A208-1DAED57BB63E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{453D8B3E-5252-4066-A208-1DAED57BB63E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{453D8B3E-5252-4066-A208-1DAED57BB63E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{453D8B3E-5252-4066-A208-1DAED57BB63E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
